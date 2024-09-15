@@ -20,3 +20,5 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 pip install flask gunicorn
+
+sudo apt-get -y install podman

@@ -17,5 +17,15 @@ def run_docker():
         'stderr': stderr
     })
 
+@app.route('/run-podman')
+def run_podman():
+    output = subprocess.run(['podman', 'run', 'hello-world'], capture_output=True)
+    stdout = output.stdout.decode('utf-8')
+    stderr = output.stderr.decode('utf-8')
+    return jsonify({
+        'stdout': stdout,
+        'stderr': stderr
+    })
+
 if __name__ == '__main__':
     app.run(debug=True)
